@@ -14,9 +14,16 @@ import {
    from 'react-native';
 import DualText  from '../component/dualText'
 import AutoHeightImage from 'react-native-auto-height-image';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
 export default class Profile extends React.Component{
+  constructor(props){
+    super(props)
+  }
+
   render(){
+    const {navigation} = this.props;
     return (
       <View style={styles.main}>
         <View style={styles.header} >
@@ -44,7 +51,10 @@ export default class Profile extends React.Component{
                   </View>
                 </TouchableOpacity>
                 <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('Photos')}
+                onPress={() => 
+                  navigation.navigate('Photos')
+                  // Alert.alert('Followed !')
+                }
                 >
                   <View style={styles.btnSentProfile}>
                   <Image style={{height:16, width:16}} source={require('../assets/send-button.png')}/>

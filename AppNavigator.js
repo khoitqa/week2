@@ -6,12 +6,20 @@ import Photos from './screens/Photos'
 
 
 const AppNavigator = createStackNavigator({
-    ProfileScreen: {
-      screen: Profile,
+  ProfileScreen: {
+    screen: Profile,
+    navigationOptions: {
+      header: null,
     },
-    PhotosScreen:{
-        screen:Photos,
-    }
+  },
+  PhotosScreen:{
+    screen:Photos,
+    navigationOptions: {
+      header: null,
+  },
+},
+   
+  
   });
   
   export default AppNavigator;
